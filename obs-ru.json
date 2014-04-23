@@ -1,4 +1,16 @@
 {
+  "app_words": {
+    "cancel": "cancel", 
+    "chapters": "chapters", 
+    "language": "language", 
+    "next_chapter": "next chapter", 
+    "ok": "ok", 
+    "remove_locally": "remove locally", 
+    "remove_this_string": "remove this language from offline storage. you will need an internet connection to view it in the future.", 
+    "save_locally": "save locally", 
+    "save_this_string": "save this language locally for offline use.", 
+    "select_a_language": "select a language"
+  }, 
   "chapters": [
     {
       "frames": [
@@ -3341,6 +3353,7 @@
       "title": "50. \u0418\u0438\u0441\u0443\u0441 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u0442\u0441\u044f"
     }
   ], 
-  "date_modified": "20140414", 
+  "date_modified": "20140423", 
+  "direction": "ltr", 
   "language": "ru"
 }
