@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>15. Обетованная Земля</h1><h3>Библейская история из: Нав. 1-24</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>15. Обетованная Земля</h1><h3>Библейская история из: Нав. 1-24</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-15-01.jpg"><p>Наконец, пора было израильтянам войти в Ханаан, Обетованную Землю. Иисус Навин послал двух лазутчиков в Хананейский город Иерихон. Он был защищён прочными стенами. Блудница по имени Раав защитила лазутчиков и помогла им убежать, потому что она верила Богу. Они пообещали защитить Раав и её семью, когда Иерихон будет разрушен.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-15-02.jpg"><p>Израильтянам нужно было пересечь реку Иордан, чтобы войти в Обетованную Землю. Бог сказал Иисусу Навину: «Пусть священники идут первыми». Когда ноги священников коснулись реки Иордан, вода перестала течь, поэтому Израильтяне смогли перейти по суше.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-15-03.jpg"><p>После того как народ перешёл реку Иордан, Бог рассказал Иисусу Навину, как атаковать могущественный город Иерихон. Народ послушался Бога. Солдаты и священники маршировали вокруг города Иерихона один раз в день в течение шести дней.</p></section>
@@ -109,13 +108,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-15-12.jpg"><p>После этой битвы Бог дал каждому племени Израиля свою собственную часть Обетованной Земли. Затем Бог дал Израилю мир вдоль всех его границ.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-15-13.jpg"><p>Когда Иисус Навин был старым человеком, он созвал весь народ Израиля вместе. Затем Иисус Навин обновил завет, который Бог заключил с Израильтянами на Синае. Народ пообещал оставаться верным Богу и следовать Его законам.</p></section>
 <section><a href="../16/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>11. Еврейская Пасха</h1><h3>Библейская история из: Исх. 11:1-12:32</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>11. Еврейская Пасха</h1><h3>Библейская история из: Исх. 11:1-12:32</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-11-01.jpg"><p>Бог предупредил фараона, что если он не разрешит израильтянам уйти, тогда Он убьёт всех первенцев мужского пола, как людей, так и животных. Когда фараон услышал это, он всё ещё отказывался верить Богу.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-11-02.jpg"><p>Бог предусмотрел способ спасти первенца всякого, кто верил в Него. Каждая семья должна была выбрать совершенного ягнёнка или козла и убить его.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-11-03.jpg"><p>Потом израильтянам нужно было поместить кровь вокруг двери их дома. Они должны были пожарить мясо, и быстро съесть его вместе с хлебом, который был изготовлен без дрожжей. Они должны были быть готовыми покинуть Египет, когда они съедят.</p></section>
@@ -104,13 +103,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-11-07.jpg"><p>Каждый египетский первенец мужского пола умер, от первенца узника в темнице до первенца фараона. В Египте был большой плач.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-11-08.jpg"><p>В ту же самую ночь фараон позвал Моисея и Аарона и сказал: «Берите израильтян и уходите из Египта немедленно!» Египтяне также побуждали израильтян немедленно уходить.</p></section>
 <section><a href="../12/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

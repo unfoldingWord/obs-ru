@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>13. Божий завет с Израилем</h1><h3>Библейская история из: Исх. 19-34</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>13. Божий завет с Израилем</h1><h3>Библейская история из: Исх. 19-34</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-13-01.jpg"><p>После того как Бог провёл израильтян через Красное море, Он повёл их через пустыню к горе, называемой Синай. Это была та самая гора, где Моисей видел горящий куст. Народ установил шатры у подножия горы.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-13-02.jpg"><p>Бог сказал Моисею и всему народу Израиля: «Если вы будете слушаться Меня и хранить Мой завет, вы будете Моим ценным уделом, царством священников и святой нацией».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-13-03.jpg"><p>Три дня спустя, после того как народ приготовил себя духовно, Бог сошёл на вершину горы Синай с громом, молнией, дымом и громким звуком трубы. Только Моисею было разрешено подняться на гору.</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-13-14.jpg"><p>Затем Моисей разбил идола в порошок, бросил порошок в воду и заставил народы выпить эту воду. Бог послал на людей бедствие, и многие из них умерли.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-13-15.jpg"><p>Моисей снова взобрался на гору и помолился, чтобы Бог простил народ. Бог послушал Моисея и простил их. Моисей написал Десять Заповедей на новых каменных дощечках, чтобы заменить те, которые он разбил. Затем Бог повёл израильтян от горы Синай к Обещанной Земле.</p></section>
 <section><a href="../14/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>38. Иисуса предают</h1><h3>Библейская история из: Мф. 26:14-56; Мк. 14:10-50; Лк. 22:1-53; Ин. 18:1-11</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>38. Иисуса предают</h1><h3>Библейская история из: Мф. 26:14-56; Мк. 14:10-50; Лк. 22:1-53; Ин. 18:1-11</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-38-01.jpg"><p>Иисус проповедовал около трёх лет. Это было время Пасхального Пира, когда Иудеи вспоминали, как Бог спас их от рабства в Египте за много столетий ранее. Иисус знал, что произойдёт с Ним и сказал Своим ученикам, что Он собирается в Иерусалим, где Его убьют.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-38-02.jpg"><p>Иудейские лидеры в Иерусалиме отказывались верить, что Иисус - Мессия и замышляли убить его. Иуда был одним из учеников Иисуса. Он был ответственным за денежный мешок учителей, но он любил деньги и часто воровал оттуда. Иуда пошёл к Иудейским лидерам и предложил предать им Иисуса.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-38-03.jpg"><p>Иудейские лидеры, ведомы первосвященниками заплатили Иуде тридцать кусков серебра, чтобы предать Иисуса. Это произошло именно так, как предсказали пророки. Иуда согласился, взял деньги и ушёл, ища случая помочь им арестовать Иисуса.</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-38-14.jpg"><p>Иуда пришёл с Иудейскими лидерами, солдатами и большой толпой, несущей мечи и дубинки. Он подошёл к Иисусу и сказал: «Приветствую, учитель», и поцеловал Его. Это было знаком для Иудейских лидеров, чтобы знать, кого арестовать. Тогда Иисус сказал: «Иуда, ты предаёшь меня поцелуем?»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-38-15.jpg"><p>Когда солдаты арестовывали Иисуса, Пётр вытащил меч и отрезал ухо слуги первосвященника. Иисус сказал: «Уберите меч! Я мог бы попросить у Отца армию ангелов, чтобы защитить Меня. Но Я должен подчиниться Моему Отцу». Потом Иисус исцелил ухо человека, а все ученики убежали.</p></section>
 <section><a href="../39/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

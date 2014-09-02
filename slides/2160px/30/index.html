@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>30. Иисус кормит пять тысяч человек</h1><h3>Библейская история из: Мф. 14:13-21; Мк. 6:31-44; Лк. 9:10-17; Ин. 6:5-15</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>30. Иисус кормит пять тысяч человек</h1><h3>Библейская история из: Мф. 14:13-21; Мк. 6:31-44; Лк. 9:10-17; Ин. 6:5-15</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-30-01.jpg"><p>Иисус послал Своих учеников проповедовать и учить. Когда они вернулись, они рассказали Иисусу, чему они учили и что делали. Затем Иисус пригласил их пойти с Ним в тихое место, чтобы немного отдохнуть. Итак, они сели в лодку и поехали.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-30-02.jpg"><p>Но было много людей, которые видели, как Иисус и Его ученики уезжают. Они побежали вдоль берега озера, чтобы попасть на другую сторону раньше их. Когда Иисус и ученики прибыли, их встретили большие толпы народа.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-30-03.jpg"><p>В толпе было более 5 000 человек, не считая женщин и детей. Иисус почувствовал большую доброту к людям. Для Иисуса эти люди были как овцы, не имеющие пастуха. Итак, Он учил их и исцелял их больных.</p></section>
@@ -105,13 +104,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-30-08.jpg"><p>Затем Иисус начал разламывать хлеб и рыбу. Он давал куски Своим ученикам, чтобы отдать людям. Ученики передавали еду, и она никогда не заканчивалась! Все люди ели и насытились.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-30-09.jpg"><p>Ученики даже подобрали двенадцать полных корзин оставшейся еды, которую не ели. Вся пища появилась от пяти булок хлеба и двух рыб.</p></section>
 <section><a href="../31/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

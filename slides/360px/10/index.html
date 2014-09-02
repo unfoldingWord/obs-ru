@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>10. Десять бедствий</h1><h3>Библейская история из: Исх. 5-10</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>10. Десять бедствий</h1><h3>Библейская история из: Исх. 5-10</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-10-01.jpg"><p>Моисей и Аарон пошли к фараону. Они сказали: «Вот что говорит Бог Израиля – Отпусти мой народ!» Фараон не послушал их. Вместо того чтобы позволить израильтянам выйти на свободу, он сделал их работу ещё тяжелее!</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-10-02.jpg"><p>Фараон продолжал отказываться отпустить народ, поэтому Бог послал на Египет десять ужасных бедствий. Через эти бедствия Бог показал фараону, что Он сильнее, чем фараон и все боги Египта.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-10-03.jpg"><p>Бог превратил реку Нил в кровь, но фараон всё не отпускал израильтян.</p></section>
@@ -108,13 +107,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-10-11.jpg"><p>Потом Бог послал тьму, которая длилась три дня. Было так темно, что египтяне не могли покинуть свои дома. Но был свет, где жили израильтяне.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-10-12.jpg"><p>Даже после этих девяти бедствий фараон всё ещё отказывался разрешить израильтянам выйти на свободу. Поскольку фараон не слушал, Бог запланировал послать одну последнюю язву. Это изменило мнение фараона.</p></section>
 <section><a href="../11/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

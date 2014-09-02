@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>28. Богатый молодой руководитель</h1><h3>Библейская история из: Мф. 19:16-30; Мк. 10:17-31; Лк.18:18-30</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>28. Богатый молодой руководитель</h1><h3>Библейская история из: Мф. 19:16-30; Мк. 10:17-31; Лк.18:18-30</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-28-01.jpg"><p>Однажды богатый молодой правитель пришёл к Иисусу и спросил Его: «Учитель, что хорошего должен я делать, чтобы иметь жизнь вечную?» Иисус сказал ему: «Почему ты спрашиваешь меня о том, что хорошо? Есть только Один, кто является хорошим, и это Бог. Но если ты хочешь иметь вечную жизнь, подчиняйся Божьим законам».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-28-02.jpg"><p>«Каким?» - спросил он. Иисус ответил: «Не убивай. Не прелюбодействуй. Не кради. Не лги. Почитай твоего отца и мать, и люби ближнего твоего как любишь самого себя».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-28-03.jpg"><p>Молодой человек, пытаясь доказать, что он прав, сказал: «Я подчиняюсь этим законам с тех пор как я был мальчиком. Что ещё мне нужно делать?» Иисус посмотрел на него и полюбил его.</p></section>
@@ -106,13 +105,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-28-09.jpg"><p>Пётр сказал Иисусу: «Мы оставили всё и последовали за Тобой. Какой будет наша награда?»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-28-10.jpg"><p>Иисус ответил: «Каждый, кто оставил дома, братьев, сестёр, отца, мать, детей или имущество ради имени Моего, наследует в 100 раз больше в следующем мире, а также жизнь вечную. Но многие, которые являются первыми, будут последними, а те, кто последние - будут первыми».</p></section>
 <section><a href="../29/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

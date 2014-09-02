@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>27. История о добром самарянине</h1><h3>Библейская история из: Лк. 10:25-37</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>27. История о добром самарянине</h1><h3>Библейская история из: Лк. 10:25-37</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-27-01.jpg"><p>Однажды к Иисусу пришёл юрист, чтобы проверить его, говоря: «Учитель, что я должен делать, чтобы наследовать жизнь вечную?» Иисус отвечал: «Что написано в законе Божьем?»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-27-02.jpg"><p>«Люби Господа твоего Бога всем сердцем твоим, душой, силой и разумом. И люби ближнего своего как самого себя», - сказал юрист. Иисус отвечал: «Ты прав! Делай это, и ты будешь жить».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-27-03.jpg"><p>Но юрист хотел доказать, что он прав, поэтому он спросил: «Кто мой ближний?»</p></section>
@@ -107,13 +106,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-27-10.jpg"><p>«На следующий день Самарянину нужно было продолжать свой путь. Он дал человеку, отвечающему за гостиницу денег и сказал:  ‘Позаботьтесь о нём, и если вы израсходуете больше денег, чем это, я оплачу эти расходы, когда я вернусь’».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-27-11.jpg"><p>Потом Иисус спросил юриста: «Кто из этих трёх человек, ты думаешь, был ближним человеку, которого ограбили и избили?» Юрист отвечал: «Тот, кто оказал милость». Иисус сказал юристу: «Ты иди и делай то же самое».</p></section>
 <section><a href="../28/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

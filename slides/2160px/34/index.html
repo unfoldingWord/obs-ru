@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>34. Иисус преподаёт другие истории</h1><h3>Библейская история из: Мф. 13:31-33, 44-46; Мк. 4:30-32; Лк. 13:18-21; 18:9-14</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>34. Иисус преподаёт другие истории</h1><h3>Библейская история из: Мф. 13:31-33, 44-46; Мк. 4:30-32; Лк. 13:18-21; 18:9-14</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-34-01.jpg"><p>Иисус рассказал много других историй о Божьем Царстве. Он сказал: «Царство Божье подобно горчичному зерну, которое человек посадил в поле. Когда оно является зернышком, оно самое маленькое из всех».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-34-02.jpg"><p>«Но когда горчичное зерно вырастает, это самое большое из всех садовых растений, достаточно большое, что даже птицы прилетают и делают гнёзда в его ветвях».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-34-03.jpg"><p>Иисус рассказал ещё одну историю: «Царство Божье подобно дрожжам, которые женщина подмешивала в тесто до тех пор, пока они не распространились по всему тесту».</p></section>
@@ -106,13 +105,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-34-09.jpg"><p>«Но сборщик налогов стоял вдалеке, даже не поднимал глаз к небу, но бил себя в грудь и молился: ‘Бог, помилуй меня, грешника’».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/2160px/obs-ru-34-10.jpg"><p>Затем Иисус сказал: «Я говорю вам правду, сборщик налогов пошёл домой прощённым, а не религиозный лидер. Каждый, кто горд, будет унижен, но кто унижает себя будет возвышен».</p></section>
 <section><a href="../35/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>19. Пророки</h1><h3>Библейская история из: 3Цар. 16-18; 4Цар. 5; Иер. 38</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>19. Пророки</h1><h3>Библейская история из: 3Цар. 16-18; 4Цар. 5; Иер. 38</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-19-01.jpg"><p>На протяжении истории Израильтян Бог посылал им пророков. Пророки слышали послания от Бога, и затем говорили Божьи послания людям.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-19-02.jpg"><p>Илия был пророком, когда Ахав был царём над Израилем. Ахав был злым человеком, который поощрял народ поклоняться ложному Богу по имени Ваал. Илия сказал Ахаву: «В Израиле не будет ни дождя, ни росы, пока я не скажу». Это очень рассердило Ахава.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-19-03.jpg"><p>Бог сказал Илиии спрятаться в пустыне около ручья. Каждое утро и каждый вечер птицы приносили ему хлеб и мясо. Ахав и его армия искали Илию, но не могли найти его. Засуха была такой суровой, что поток в конечном счёте пересох.</p></section>
@@ -114,13 +113,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-19-17.jpg"><p>Большую часть времени народ не слушал Бога. Они часто жестоко обращались с пророками, а иногда даже убивали их. Однажды пророка Иеремию посадили в сухой колодец и оставили там умирать. Он погрузился в грязь, которая была на дне колодца, но затем царь сжалился над ним и вытащил его, до того как он умер.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-19-18.jpg"><p>Пророки продолжали говорить за Бога, даже если люди ненавидели их. Они предупреждали людей, что Бог уничтожит их, если они не покаятся. Они также напоминали людям об обещании, что придёт Божий Мессия.</p></section>
 <section><a href="../20/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

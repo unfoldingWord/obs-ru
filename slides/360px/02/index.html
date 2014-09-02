@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>2. В мир приходит грех</h1><h3>Библейская история из: Быт. 3</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>2. В мир приходит грех</h1><h3>Библейская история из: Быт. 3</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-02-01.jpg"><p>Адам и его жена были очень счастливы, живя в прекрасном саду, который Бог сотворил для них. Никто из них не носил одежду, но они не чувствовали стыда, потому что в мире не было греха. Они часто гуляли в саду и беседовали с Богом.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-02-02.jpg"><p>Но в саду была хитрая змея. Она спросила женщину: «Бог действительно сказал вам не есть плоды с деревьев в саду?»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-02-03.jpg"><p>Женщина ответила: «Бог сказал нам, что можно есть плоды любого дерева, кроме плодов с дерева познания добра и зла. Бог сказал нам: "Если вы съедите этот плод или даже просто дотронетесь до него, то умрёте"».</p></section>
@@ -108,13 +107,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-02-11.jpg"><p>Бог сказал мужчине: «Ты послушал свою жену и ослушался Меня. Теперь земля проклята, и тебе придётся упорно трудиться, чтобы выращивать пищу. Потом ты умрёшь, и твоё тело возвратится в землю». Мужчина назвал свою жену Ева, что означает «дающая жизнь», потому что она станет матерью всех людей. А Бог одел Адама и Еву в шкуры животных.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-02-12.jpg"><p>Затем Бог сказал: «Теперь, когда люди стали подобными Нам, зная добро и зло, им нельзя позволить есть плоды с дерева жизни и жить вечно». Итак, Бог изгнал Адама и Еву из прекрасного сада. Бог поставил больших, могучих ангелов у входа в сад, чтобы не позволять никому есть плоды с дерева жизни.</p></section>
 <section><a href="../03/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

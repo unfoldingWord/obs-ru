@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>31. Иисус ходит по воде</h1><h3>Библейская история из: Мф. 14:22-33; Мк. 6:45-52; Ин. 6:16-21</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>31. Иисус ходит по воде</h1><h3>Библейская история из: Мф. 14:22-33; Мк. 6:45-52; Ин. 6:16-21</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-31-01.jpg"><p>Затем Иисус сказал ученикам сесть в лодку и плыть на другую сторону озера, пока Он распустит толпу. После того как Иисус отослал толпу, Он взошёл на гору помолиться. Иисус был там совсем один и долго молился до самого вечера.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-31-02.jpg"><p>Тем временем лодка учеников была далеко от суши. Они были в опасности, потому что начался шторм, и волны и ветер швыряли лодку.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-31-03.jpg"><p>Иисус решил пойти к ним, поэтому Он пошёл по верху воды через озеро к лодке!</p></section>
@@ -104,13 +103,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-31-07.jpg"><p>Затем Пётр испугался и начал тонуть. Он закричал: «Господин, спаси меня!» Иисус тотчас протянул руку и схватил его. Затем Он сказал Петру: «О ты, маловерный, зачем ты засомневался?»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-31-08.jpg"><p>Когда Пётр и Иисус зашли в лодку, ветер немедленно стих. Ученики были удивлены. Они поклонились Иисусу, говоря Ему: «Истинно, Ты - Сын Божий».</p></section>
 <section><a href="../32/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

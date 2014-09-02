@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>14. Скитания в пустыне</h1><h3>Библейская история из: Исх. 16-17; Чис. 10-14; 20; 27; Втор. 34</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>14. Скитания в пустыне</h1><h3>Библейская история из: Исх. 16-17; Чис. 10-14; 20; 27; Втор. 34</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-14-01.jpg"><p>После того как Израильтяне получили Божий Завет на горе Синай, Бог начал вести их к Обетованной Земле, которая так же называлась Ханаан. Облачный столп показывал им путь.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-14-02.jpg"><p>Бог обещал Аврааму, Исааку и Иакову, что Он даст Обещанную Землю их потомкам, но сейчас там проживало много народностей. Они назывались хананеи. Хананеи не верили в Бога. Он поклонялись ложным богам и делали много злых вещей.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-14-03.jpg"><p>Бог сказал израильтянам: «Вы должны избавиться от всех хананеев в Обещанной Земле. Не заключайте с ними мир и не вступайте в брак с ними. Вы должны полностью уничтожить всех их идолов. Если вы не подчинитесь Мне, вы будете поклоняться их идолам вместо Меня».</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-14-14.jpg"><p>После того как израильтяне проскитались по пустыне сорок лет, все люди, которые бунтовали против Бога, умерли. Потом Бог снова повёл народ к границе Обетованной Земли. Теперь Моисей был очень стар, поэтому он выбрал Иисуса Навина, чтобы помогать ему вести народ. Бог обещал Моисею, что однажды Он воздвигнет другого пророка как Моисей.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-14-15.jpg"><p>Бог привёл Моисея на вершину горы, чтобы он мог видеть Обетованную Землю. Моисей увидел Обетованную Землю, но никогда не вошёл в неё. Потом Моисей умер, и Израильтяне скорбели трицадь дней. Иисус Навин стал их новым лидером. Иисус Навин был хорошим лидером, потому что он доверял и подчинялся Богу.</p></section>
 <section><a href="../15/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

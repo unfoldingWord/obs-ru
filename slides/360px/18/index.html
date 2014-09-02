@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>18. Разделённое царство</h1><h3>Библейская история из: 3Цар. 1-6; 11-12</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>18. Разделённое царство</h1><h3>Библейская история из: 3Цар. 1-6; 11-12</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-18-01.jpg"><p>После того как Давид умер, начал править его сын Соломон. Бог проговорил к Соломону и спросил его, что он хотел больше всего. Когда Соломон попросил мудрости, Бог был доволен и сделал его самым мудрым человеком в мире. Бог также сделал его очень богатым.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-18-02.jpg"><p>В Иерусалиме Соломон построил Храм, для которого его отец Давид спланировал и собрал материалы. Теперь вместо Шатра Собрания люди поклонялись Богу и приносли Ему жертвы в Храме. Бог приходил и присутствовал в Храме, и Он жил там со Своим народом.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-18-03.jpg"><p>Но Соломон любил женщин из других стран. Он ослушался Бога, женившись на многих женщинах, почти на 1 000 из них. Многие из этих женщин пришли из зарубежных стран и принесли с собой своих богов и поклонялись им. Когда Соломон был старым, он также поклонялся их богам.</p></section>
@@ -109,13 +108,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-18-12.jpg"><p>Все из царей Израиля и большинство людей поклонялись идолам, что часто включало прелюбодеяние, а иногда даже детское жертвоприношение.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-18-13.jpg"><p>Цари Иудеи были потмками Давида. Некоторые из этих царей были хорошими людьми, которые правили справедливо и поклонялись Богу. Но большинство царей Иудеи были злыми, испорченными и идолопоклонниками. Некоторые из царей даже приносил в жертву ложным богам своих детей. Народ Иудеи также восстал против Бога и поклонялся другим богам.</p></section>
 <section><a href="../19/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

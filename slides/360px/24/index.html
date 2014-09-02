@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>24. Иоанн крестит Иисуса</h1><h3>Библейская история из: Мф. 3; Мк. 1:9-11; Лк. 3:1-23</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>24. Иоанн крестит Иисуса</h1><h3>Библейская история из: Мф. 3; Мк. 1:9-11; Лк. 3:1-23</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-24-01.jpg"><p>Когда Иоанн вырос, он стал пророком. Он жил в пустыне, ел дикий мёд и саранчу, и носил одежды, сделанные из верблюжьего волоса.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-24-02.jpg"><p>Много людей приходило послушать Иоанна. Он проповедовал им, говоря: «Покайтесь, поскольку близко Царство Божье!»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-24-03.jpg"><p>Некоторые люди каялись и крестились, когда они услышали послание Иоанна, но было много религиозных лидеров, которые приходили креститься без покаяния и исповедания своих грехов.</p></section>
@@ -105,13 +104,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-24-08.jpg"><p>Когда Иисус вышел из воды, Дух Божий принял вид голубя и приземлился на Него. В то же самое время голос с небес сказал: «Ты - Сын Мой возлюбленный, и Тобой Я очень доволен».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-24-09.jpg"><p>Бог сказал Иоанну: «Дух Святой сойдёт на Того, Кого ты крестишь". Он есть Божий Сын». Есть только один Бог. Но Бог - это три личности: Отец, Сын Иисус и Святой Дух.</p></section>
 <section><a href="../25/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

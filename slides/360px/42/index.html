@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>42. Иисус возвращается на небеса</h1><h3>Библейская история из: Мф. 28:16-20; Мк. 16:12-20; Лк. 24:13-53; Ин. 20:19-23; Деян. 1:1-11</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>42. Иисус возвращается на небеса</h1><h3>Библейская история из: Мф. 28:16-20; Мк. 16:12-20; Лк. 24:13-53; Ин. 20:19-23; Деян. 1:1-11</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-42-01.jpg"><p>Позднее в этот день двое последователей Иисуса шли в ближайший город. Когда они шли, они говорили о смерти Иисуса и о том, как женщины сказали, что Он снова жив. Они хотели бы знать, действительно ли Иисус был Мессией.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-42-02.jpg"><p>Иисус подошёл и начал идти с ними, но они не узнали Его. Он спросил о чём они говорят и они рассказали Ему обо всех ужасных вещах, которые произошли в течение последних нескольких дней. Они подумали, что Он чужестранец, который не слышал об этом.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-42-03.jpg"><p>Тогда Иисус объяснил им, что говорит Слово Божье о Мессии. Он напомнил им, что пророки говорили, что Мессия пострадает и будет убит, но снова воскреснет на третий день. Когда они прибыли в город, куда они шли, была почти ночь.</p></section>
@@ -107,13 +106,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-42-10.jpg"><p>В конце сорока дней Иисус сказал Своим ученикам: «Мне дана вся власть на небесах и на земле. Итак, идите, делайте учеников из всех народов, крестя их во имя Отца, Сына и Святого Духа и уча их подчиняться всему, что Я повелел вам».</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-42-11.jpg"><p>«Помните, что Я буду с вами всегда. Оставайтесь в Иерусалиме, пока не получите силу свыше». Затем Иисус был взят на небеса, и облако спрятало Его из их поля зрения. Иисус сел у правой руки Бога, чтобы править над всем.</p></section>
 <section><a href="../43/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>39. Иисус предан суду</h1><h3>Библейская история из: Мф. 26:57-27:26; Мк. 14:53-15:15; Лк. 22:54-23:25; Ин. 18:12-19:16</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>39. Иисус предан суду</h1><h3>Библейская история из: Мф. 26:57-27:26; Мк. 14:53-15:15; Лк. 22:54-23:25; Ин. 18:12-19:16</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-39-01.jpg"><p>Сейчас была середина ночи. Солдаты повели Иисуса к дому первосвященника, чтобы допросить. Пётр следовал вдалеке. Когда Иисуса привели в дом, Пётр остался на улице и грелся у костра.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-39-02.jpg"><p>Внутри дома Иудейские лидеры предали Иисуса суду. Они привели много свидетелей, которые говорили о Нём ложь. Однако, их утверждения не согласовывались друг с другом, поэтому они не могли доказать, что Он в чём-то виновен. Иисус ничего не говорил.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-39-03.jpg"><p>В конце концов, первосвященник прямо посмотрел на Иисуса и сказал: «Скажи нам, Ты - Мессия, Сын Бога живого?»</p></section>
@@ -108,13 +107,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-39-11.jpg"><p>После разговора с Иисусом Пилат вышел к толпе и сказал: «Я не нахожу вины в этом человеке». Но Иудейские лидеры и толпа кричали: «Распни Его!» Пилат отвечал: «Он не виновен!» Но они кричали ещё громче. Тогда Пилат втретий раз сказал: «Он не виновен!»</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-39-12.jpg"><p>Но Пилат испугался, что начнётся бунт, поэтому он передал им Иисуса, чтобы распять. Солдаты высекли Иисуса, надели на Него царское платье и венец, сделанный из терна, и они насмехались над Ним, говоря: «Смотрите, Царь Иудеев!»</p></section>
 <section><a href="../40/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 

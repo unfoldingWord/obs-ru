@@ -91,10 +91,9 @@
             <li>50. Иисус возвращается</li>
         </ul>
     </div>
-    <div class="contents">
-        <div class="reveal">
-            <div class="slides">
-                <section><h1>8. Бог спасает Иосифа и его семью</h1><h3>Библейская история из: Быт. 37-50</h3></section>
+    <div class="reveal">
+        <div class="slides">
+            <section><h1>8. Бог спасает Иосифа и его семью</h1><h3>Библейская история из: Быт. 37-50</h3></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-08-01.jpg"><p>Братья Иосифа ненавидели его, потому что их отец любил его больше всех, и потому что Иосиф видел во сне, что он станет их правителем. Когда Иосиф нашёл своих братьев, они похитили его и продали работорговцам.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-08-02.jpg"><p>Много лет спустя, когда Иаков был старым человеком, он послал своего любимого сына Иосифа проверить своих братьев, которые смотрели за стадами.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-08-03.jpg"><p>Перед тем как братья Иосифа вернулись домой, они разорвали платье Иосифа и окунули его в козлиную кровь. Затем они показали платье своему отцу, чтобы он подумал, что дикое животное убило Иосифа.  Иаков очень опечалился.</p></section>
@@ -111,13 +110,56 @@
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-08-14.jpg"><p>Хотя Иаков был старым человеком, он переехал в Египет со всей своей семьёй, и они все жили там. Перед тем как Иаков умер, он благословил каждого из своих сыновей.</p></section>
 <section data-background="http://api.unfoldingword.org/obs/jpg/1/ru/360px/obs-ru-08-15.jpg"><p>Обещания, которые Бог дал Аврааму были переданы Исааку, потом Иакову, и затем двенадцати сыновьям Иакова и их семьям. Потомки двенадцати сыновей стали двенадцатью племенами Израиля.</p></section>
 <section><a href="../09/index.html"><p>Следующая глава</p></a></section>
-                </div>
             </div>
         </div>
 
         <script src="../../js/head.min.js"></script>
         <script src="../../js/reveal.min.js"></script>
         <script src="../../js/meny.js"></script>
+        <script>
+            // Create an instance of Meny
+            var meny = Meny.create({
+                // The element that will be animated in from off screen
+                menuElement: document.querySelector( '.meny' ),
+
+                // The contents that gets pushed aside while Meny is active
+                contentsElement: document.querySelector( '.reveal' ),
+
+                // [optional] The alignment of the menu (top/right/bottom/left)
+                position: Meny.getQuery().p || 'left',
+
+                // [optional] The height of the menu (when using top/bottom position)
+                height: 200,
+
+                // [optional] The width of the menu (when using left/right position)
+                width: 260,
+
+                // [optional] Distance from mouse (in pixels) when menu should open
+                threshold: 40,
+
+                // [optional] Use mouse movement to automatically open/close
+                mouse: true,
+
+                // [optional] Use touch swipe events to open/close
+                touch: true
+            });
+
+            // API Methods:
+            // meny.open();
+            // meny.close();
+            // meny.isOpen();
+
+            // Events:
+            // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
+            // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
+
+            // Embed an iframe if a URL is passed in
+            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+                var contents = document.querySelector( '.contents' );
+                contents.style.padding = '0px';
+                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+            }
+        </script>
 
         <script>
 
