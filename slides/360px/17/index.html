@@ -93,6 +93,7 @@
         </ul>
         <p><a href="https://unfoldingword.org/stories/">Open Bible Stories Home</a></p>
     </div>
+    <div class="meny-arrow"></div>
     <div class="reveal">
         <div class="slides">
             <section><h1>17. Божий завет с Давидом</h1><h3>Библейская история из: 1Цар. 10; 15-19; 24; 31; 2Цар. 5; 7; 11-12</h3></section>
@@ -153,13 +154,6 @@
             // Events:
             // meny.addEventListener( 'open', function(){ console.log( 'open' ); } );
             // meny.addEventListener( 'close', function(){ console.log( 'close' ); } );
-
-            // Embed an iframe if a URL is passed in
-            if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
-                var contents = document.querySelector( '.contents' );
-                contents.style.padding = '0px';
-                contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
-            }
         </script>
 
         <script>
