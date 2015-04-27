@@ -87,7 +87,6 @@ var FlyOutNotes = (function () {
         // create the tab to activate the slide-out
         var tabDiv = document.createElement('div');
         tabDiv.setAttribute('id', 'sliding-box-tab');
-        tabDiv.innerHTML = 'Loading...';
         slidingDiv.appendChild(tabDiv);
         // create the translation notes tab
         var notesDiv = document.createElement('div');
@@ -135,7 +134,7 @@ var FlyOutNotes = (function () {
                     return (o['id'] && (parseInt(o['id'].substr(0, 2)) === flyOutNotes.storyNum));
                 });
                 // indicate that loading is finished and enable sliding
-                document.getElementById('sliding-box-tab').innerHTML = 'Notes';
+                document.getElementById('sliding-box-tab').innerHTML = '<div></div>';
                 document.getElementById('sliding-box').setAttribute('class', 'sliding-ready');
                 // show any notes or terms that apply to this frame
                 flyOutNotes.loadNotes();
@@ -243,7 +242,7 @@ var FlyOutNotes = (function () {
         var regex = new RegExp('(\\[\\[)(.+)(\\]\\])+?');
         return text.replace(regex, function (match, p1, p2, p3) {
             var parts = p2.split('|');
-            var url = 'https://door43.org' + parts[0].replace(/:/g, '/');
+            var url = 'https://door43.org/' + parts[0].replace(/:/g, '/');
             return '<a href="' + url + '" target="_blank">' + parts[1].replace(/[\[\]]+/g, '') + '</a>';
         });
     };
